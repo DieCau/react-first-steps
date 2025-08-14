@@ -1,9 +1,9 @@
 interface ItemCounterProps {
-  productName: string;
+  itemName: string;
   quantity: number;
 }
 
-export const ItemCounter = ({ productName, quantity }: ItemCounterProps) => {
+export const ItemCounter = ({ itemName, quantity }: ItemCounterProps) => {
   return (
     <section
       style={{
@@ -13,8 +13,17 @@ export const ItemCounter = ({ productName, quantity }: ItemCounterProps) => {
         marginTop: 10,
       }}
     >
-      <span style={{ width: 150 }}>{productName}</span>
-      <button>+1</button>
+      <span style={{ width: 150 }}>{itemName}</span>
+      <button
+        onMouseEnter={() => {
+          console.log(`Mouse Enter ${itemName}`);
+        }}
+        onClick={() => {
+          console.log(`Click ${itemName}`);
+        }}
+      >
+        +1
+      </button>
       <span>{quantity}</span>
       <button>-1</button>
     </section>
