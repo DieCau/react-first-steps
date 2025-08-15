@@ -1,9 +1,23 @@
+import { useState } from 'react';
+
 interface ItemCounterProps {
   itemName: string;
-  quantity: number;
+  quantity?: number;
 }
 
-export const ItemCounter = ({ itemName, quantity }: ItemCounterProps) => {
+// Si mi valor es undefined puede evitar igualando a un valor
+export const ItemCounter = ({ itemName, quantity = 1 }: ItemCounterProps) => {
+  const [count, setCount] = useState(quantity);
+
+  const handleAdd = () => {
+    setCount(count + 1);
+  };
+
+  const handleSubtract = () => {
+    if (count === 1) return;
+    setCount(count - 1);
+  };
+
   return (
     <section
       style={{
@@ -14,18 +28,9 @@ export const ItemCounter = ({ itemName, quantity }: ItemCounterProps) => {
       }}
     >
       <span style={{ width: 150 }}>{itemName}</span>
-      <button
-        onMouseEnter={() => {
-          console.log(`Mouse Enter ${itemName}`);
-        }}
-        onClick={() => {
-          console.log(`Click ${itemName}`);
-        }}
-      >
-        +1
-      </button>
-      <span>{quantity}</span>
-      <button>-1</button>
+      <button onClick={handleAdd}>+1</button>
+      <span>{count}</span>
+      <button onClick={handleSubtract}>-1</button>
     </section>
   );
 };
