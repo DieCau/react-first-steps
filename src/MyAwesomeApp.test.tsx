@@ -27,7 +27,7 @@ describe('MyAwesomeApp', () => {
     render(<MyAwesomeApp />);
     screen.debug();
 
-    // ! ASSERT
+    //! ASSERT
     // En lugar de buscarlo por el rol
     // const h1 = screen.getByRole('heading', {
     //   level: 1,
@@ -37,5 +37,17 @@ describe('MyAwesomeApp', () => {
     const h1 = screen.getByTestId('first-name-title');
 
     expect(h1.innerHTML).toContain('Diego');
+  });
+
+  // Verificar que el DOM no fue alterado con "toMatchSnapshot"
+  //! Recordar: si los cambios son correctos presione "u" y se actualiza
+  test('should match snapshot', () => {
+    const { container } = render(<MyAwesomeApp />);
+    expect(container).toMatchSnapshot();
+  });
+
+  test('should match snapshot', () => {
+    render(<MyAwesomeApp />);
+    expect(screen.getByTestId('div-app')).toMatchSnapshot();
   });
 });

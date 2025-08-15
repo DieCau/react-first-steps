@@ -1,0 +1,77 @@
+// Vitest Snapshot v1, https://vitest.dev/guide/snapshot.html
+
+exports[`MyAwesomeApp > should match snapshot 1`] = `
+<div>
+  <div
+    data-testid="div-app"
+  >
+    <h1
+      data-testid="first-name-title"
+    >
+       
+      Diego
+       
+    </h1>
+    <h3>
+       
+      Caucota
+       
+    </h3>
+    <p>
+      4
+    </p>
+    <p
+      class="mi-clase-favorita"
+    >
+       
+      Fifa 2025, Roblox, Minecraft
+       
+    </p>
+    <h1>
+      No activo
+    </h1>
+    <p
+      style="background-color: rgb(235, 182, 182); border-radius: 20px; padding: 10px; margin-top: 50px;"
+    >
+      {"zipCode":"ABS-123","country":"Argentina"}
+    </p>
+  </div>
+</div>
+`;
+
+exports[`MyAwesomeApp > should match snapshot 2`] = `
+<div
+  data-testid="div-app"
+>
+  <h1
+    data-testid="first-name-title"
+  >
+     
+    Diego
+     
+  </h1>
+  <h3>
+     
+    Caucota
+     
+  </h3>
+  <p>
+    4
+  </p>
+  <p
+    class="mi-clase-favorita"
+  >
+     
+    Fifa 2025, Roblox, Minecraft
+     
+  </p>
+  <h1>
+    No activo
+  </h1>
+  <p
+    style="background-color: rgb(235, 182, 182); border-radius: 20px; padding: 10px; margin-top: 50px;"
+  >
+    {"zipCode":"ABS-123","country":"Argentina"}
+  </p>
+</div>
+`;
