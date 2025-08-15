@@ -1,5 +1,6 @@
 // Importar para mis estilos las CSSProperties
 import type { CSSProperties } from 'react';
+// import { test } from 'vitest';
 
 // Debo tener las definiciones de mis variables por fuera del componente
 const firstName = 'Diego';
@@ -21,7 +22,7 @@ const myStyles: CSSProperties = {
 export const MyAwesomeApp = () => {
   return (
     <>
-      <h1> {firstName} </h1>
+      <h1 data-testid='first-name-title'> {firstName} </h1>
       <h3> {lastName} </h3>
       <p> {favoriteGames.join(', ')} </p>
       <h1>{isActive ? 'Activo' : 'No activo'}</h1>
