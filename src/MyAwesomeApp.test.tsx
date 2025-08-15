@@ -25,7 +25,7 @@ describe('MyAwesomeApp', () => {
   test('should render firstName and lastName - screen', () => {
     // No tenemos la necesidad de llamar al container
     render(<MyAwesomeApp />);
-    screen.debug();
+    // screen.debug();
 
     //! ASSERT
     // En lugar de buscarlo por el rol

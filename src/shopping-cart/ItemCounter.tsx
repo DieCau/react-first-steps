@@ -3,13 +3,13 @@ import { useState } from 'react';
 // import './ItemCounter.css';
 import styles from './ItemCounter.module.css';
 
-interface ItemCounterProps {
+interface Props {
   itemName: string;
   quantity?: number;
 }
 
 // Si mi valor es undefined puede evitar igualando a un valor
-export const ItemCounter = ({ itemName, quantity = 1 }: ItemCounterProps) => {
+export const ItemCounter = ({ itemName, quantity = 1 }: Props) => {
   const [count, setCount] = useState(quantity);
 
   const handleAdd = () => {
