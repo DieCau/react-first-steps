@@ -51,14 +51,37 @@ describe('ItemCounter', () => {
   });
 
   test('should not decrease count when -1 button is pressed and quantity is 1', () => {
+    //! ARR (Arreglar - Preparar)
     const quantity = 1;
     render(<ItemCounter itemName={'Test item'} quantity={quantity} />);
     const [, buttonSubtract] = screen.getAllByRole('button');
     // Para disparar un evento usamos "fireEvent" de Testing Library
-    //! ACT
+    //! ACT (Accionar)
     fireEvent.click(buttonSubtract);
 
-    //! ASSERT
+    //! ASSERT (Afirmar)
     expect(screen.getByText('1')).toBeDefined();
+  });
+
+  test('should change to red when count is 1', () => {
+    const quantity = 1;
+    const itemName = 'Test item';
+    render(<ItemCounter itemName={itemName} quantity={quantity} />);
+
+    const itemText = screen.getByText(itemName);
+
+    //! ASSERT
+    expect(itemText.style.color).toBe('red');
+  });
+
+  test('should change to black when count is greater than 1', () => {
+    const quantity = 2;
+    const itemName = 'Test item';
+    render(<ItemCounter itemName={itemName} quantity={quantity} />);
+
+    const itemText = screen.getByText(itemName);
+
+    //! ASSERT
+    expect(itemText.style.color).toBe('black');
   });
 });
