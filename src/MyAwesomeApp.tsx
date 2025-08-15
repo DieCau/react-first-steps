@@ -17,6 +17,7 @@ const myStyles: CSSProperties = {
   marginTop: 50,
 };
 
+// Testear componente
 export const MyAwesomeApp = () => {
   return (
     <>
